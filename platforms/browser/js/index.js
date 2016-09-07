@@ -36,7 +36,13 @@ var app = {
         app.receivedEvent('deviceready');
 	
 	var test = document.getElementById("test");
-	test.innerHTML = "<br>fdsafsd [" + cordova + "][" + cordova.file + "] fdsafsdf";
+	
+	var str = "";
+	for (var key in cordova) {
+		str += key + "<br>";
+	}
+	str += "[" + cordova + "][" + cordova.file + "]";
+	test.innerHTML = str;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

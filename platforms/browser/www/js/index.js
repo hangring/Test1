@@ -34,6 +34,15 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+	
+	var test = document.getElementById("test");
+	
+	var str = "";
+	for (var key in cordova) {
+		str += key + "<br>";
+	}
+	str += "[" + cordova + "][" + cordova.file + "]";
+	test.innerHTML = str;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
